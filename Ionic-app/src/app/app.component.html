@@ -1,0 +1,80 @@
+<ion-app [class.dark-theme]="dark">
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+
+        <ion-list id="header-list">
+          <ion-list-header>Hello {{user?.name}}</ion-list-header>
+          <ion-note>{{user?.email}}</ion-note>
+        </ion-list>
+
+        <!-- User is logged-In -->
+        <ion-list *ngIf="loggedIn" lines="none">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/app/tabs/home" routerLinkActive="active" routerDirection="root"
+              detail="false">
+              <ion-icon slot="start" name="rocket-sharp"></ion-icon>
+              <ion-label>
+                Home
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/app/tabs/account" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="person-sharp"></ion-icon>
+              <ion-label>
+                Account
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+        <!-- User is not logged-In -->
+        <ion-list *ngIf="!loggedIn" lines="none">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="log-in-sharp"></ion-icon>
+              <ion-label>
+                Login
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+        <ion-list lines="none">
+
+          <ion-item lines="none" (click)="themeModeChanged()">
+            <ion-icon slot="start" name="moon-sharp"></ion-icon>
+            <ion-toggle [(ngModel)]="dark">
+              Dark Mode
+            </ion-toggle>
+          </ion-item>
+
+        </ion-list>
+
+        <!-- logout If User is logged-In -->
+        <ion-list *ngIf="loggedIn" lines="none">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item button (click)="logout()" detail="false">
+              <ion-icon slot="start" name="log-out-sharp"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+</ion-app>

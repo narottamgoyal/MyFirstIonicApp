@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="user" class="ion-padding-top ion-text-center">
+    <img src="{{user.imageUrl}}" alt="avatar">
+    <h2>{{user.name}}</h2>
+
+    <ion-list inset>
+      <ion-item (click)="changeMobileNumber()">
+        <ion-label>
+          Primary Mobile
+        </ion-label>
+        <ion-text slot="end">{{mobileNumber}}</ion-text>
+      </ion-item>
+
+      <ion-item (click)="updateAddress()">
+        <ion-label>
+          Address
+        </ion-label>
+        <ion-label class="currentAddress" slot="end" readonly>{{currentAddress?.formatted_address}}</ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "MyService",
+  "type": "angular",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  }
+}

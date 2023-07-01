@@ -1,0 +1,20 @@
+.center-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formatted_address {
+  width: 11em;
+  text-align: right;
+}
+
+.map {
+  flex: 1;
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}

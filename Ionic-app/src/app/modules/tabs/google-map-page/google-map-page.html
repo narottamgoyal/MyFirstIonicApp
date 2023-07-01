@@ -1,0 +1,59 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">
+        <ion-icon name="arrow-back-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Your Address
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="locateMe()" strong>Locate Me</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="box">
+
+    <div>
+      <ion-list full>
+        <ion-item>
+          <ion-label>Address</ion-label>
+          <ion-text slot="end" class="formatted_address">{{currentAddress.formatted_address}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Street</ion-label>
+          <ion-text slot="end">{{currentAddress.street}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>City</ion-label>
+          <ion-text slot="end">{{currentAddress.city}} {{currentAddress.postal_code}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>State</ion-label>
+          <ion-text slot="end">{{currentAddress.region}} {{currentAddress.country}}</ion-text>
+        </ion-item>
+
+      </ion-list>
+
+
+    </div>
+    <div #mapElement class="map" style="color: black !important;" id="gmap"> </div>
+
+  </div>
+
+
+</ion-content>
+
+<ion-footer translucent="true">
+  <ion-toolbar>
+    <ion-button class="center-icon" (click)="done()">Done</ion-button>
+  </ion-toolbar>
+</ion-footer>
