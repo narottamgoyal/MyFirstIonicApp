@@ -1,6 +1,6 @@
 # My First Ionic App
 
-### Enable Google API for map
+# Enable Google API for map
 
 ```
 Directions API
@@ -37,7 +37,7 @@ ionic cap add android
     <string name="server_client_id"></string>
 ```
 
-### keytool command
+# keytool command
 
 Generate SHA-1 and put this firbase console under projextSetting> android app
 
@@ -55,8 +55,34 @@ keytool -list -v -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.k
 android
 ```
 
-## Inspect/Debug app
+# Inspect/Debug app
 
 ```
 chrome://inspect/#devices
+```
+
+# Push Notificaion
+
+### Endpoint
+
+```
+https://fcm.googleapis.com/v1/projects/<project-Id>/messages:send
+```
+
+### Message Body
+
+```
+{
+    "message": {
+        "token": "<Device Registration Token>",
+        "notification": {
+            "title": "My Title-3",
+            "body": "My Body-4"
+        },
+        "data": {
+            "key1": "value1",
+            "key2": "value2"
+        }
+    }
+}
 ```
