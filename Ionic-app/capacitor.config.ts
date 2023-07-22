@@ -14,7 +14,7 @@ const config: CapacitorConfig = {
   },
 
   appId: 'com.demoapp',
-  appName: 'My First Ionic App',
+  appName: 'Infinite POC',
   webDir: 'www',
   server: {
     androidScheme: 'https'
